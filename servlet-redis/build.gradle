@@ -1,0 +1,11 @@
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+	compile 'org.springframework.boot:spring-boot-starter-actuator'
+	compile 'org.springframework.boot:spring-boot-starter-data-redis'
+	compile 'org.springframework.boot:spring-boot-starter-security'
+	compile 'org.springframework.boot:spring-boot-starter-web'
+	compile 'org.springframework.session:spring-session-data-redis'
+
+	testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
