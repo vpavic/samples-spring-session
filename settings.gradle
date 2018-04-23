@@ -1,5 +1,6 @@
 rootProject.name = 'spring-session-demos'
 
 include 'servlet-hazelcast-embedded'
+include 'servlet-jdbc'
 include 'servlet-redis'
 include 'webflux-redis'
