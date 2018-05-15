@@ -12,4 +12,10 @@ subprojects {
 	repositories {
 		mavenCentral()
 	}
+
+	dependencyManagement {
+		imports {
+			mavenBom 'org.springframework.boot:spring-boot-dependencies:2.0.2.RELEASE'
+		}
+	}
 }

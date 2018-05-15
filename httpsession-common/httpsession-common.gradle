@@ -1,0 +1,7 @@
+dependencies {
+	compile 'javax.servlet:javax.servlet-api'
+	compile 'org.slf4j:slf4j-api'
+	compile 'org.springframework:spring-webmvc'
+	compile 'org.springframework.security:spring-security-config'
+	compile 'org.springframework.security:spring-security-web'
+}
