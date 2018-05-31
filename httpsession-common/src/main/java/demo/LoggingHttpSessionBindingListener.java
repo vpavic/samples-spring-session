@@ -14,12 +14,14 @@ public class LoggingHttpSessionBindingListener implements HttpSessionBindingList
 
 	@Override
 	public void valueBound(HttpSessionBindingEvent event) {
-		logger.info("valueBound: sessionId = {}, name = {}, value = {}", event.getSession().getId(), event.getName(), event.getValue());
+		logger.info("valueBound: sessionId = {}, name = {}, value = {}", event.getSession().getId(), event.getName(),
+				event.getValue());
 	}
 
 	@Override
 	public void valueUnbound(HttpSessionBindingEvent event) {
-		logger.info("valueUnbound: sessionId = {}, name = {}, value = {}", event.getSession().getId(), event.getName(), event.getValue());
+		logger.info("valueUnbound: sessionId = {}, name = {}, value = {}", event.getSession().getId(), event.getName(),
+				event.getValue());
 	}
 
 }

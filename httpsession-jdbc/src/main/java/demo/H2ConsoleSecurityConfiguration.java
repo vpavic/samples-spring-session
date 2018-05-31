@@ -23,7 +23,8 @@ public class H2ConsoleSecurityConfiguration extends WebSecurityConfigurerAdapter
 			.headers()
 				.frameOptions().sameOrigin()
 				.and()
-			.csrf().disable();
+			.csrf()
+				.disable();
 		// @formatter:on
 	}
 
