@@ -10,4 +10,5 @@ dependencies {
 	compile 'org.springframework.session:spring-session-data-redis'
 
 	testCompile 'org.springframework.boot:spring-boot-starter-test'
+	testCompile 'org.testcontainers:testcontainers'
 }
