@@ -20,13 +20,15 @@ public class WebSessionRedisApplicationTests {
 	@TestConfiguration
 	static class Config {
 
-		@Bean(initMethod = "start")
-		GenericContainer redisContainer() {
-			return new GenericContainer("redis:4.0.9").withExposedPorts(6379);
+		@Bean
+		public GenericContainer redisContainer() {
+			GenericContainer redisContainer = new GenericContainer("redis:4.0.9").withExposedPorts(6379);
+			redisContainer.start();
+			return redisContainer;
 		}
 
 		@Bean
-		LettuceConnectionFactory redisConnectionFactory() {
+		public LettuceConnectionFactory redisConnectionFactory() {
 			return new LettuceConnectionFactory(redisContainer().getContainerIpAddress(),
 					redisContainer().getFirstMappedPort());
 		}
