@@ -18,4 +18,4 @@ cache:
 
 install: true
 
-script: ./gradlew --no-daemon check
+script: ./gradlew check --no-daemon

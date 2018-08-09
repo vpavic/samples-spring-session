@@ -22,7 +22,7 @@ public class WebSessionRedisApplicationTests {
 
 		@Bean
 		public GenericContainer redisContainer() {
-			GenericContainer redisContainer = new GenericContainer("redis:4.0.9").withExposedPorts(6379);
+			GenericContainer redisContainer = new GenericContainer("redis:4.0.10").withExposedPorts(6379);
 			redisContainer.start();
 			return redisContainer;
 		}
