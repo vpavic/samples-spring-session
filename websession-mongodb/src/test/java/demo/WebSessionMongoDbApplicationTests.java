@@ -1,6 +1,5 @@
 package demo;
 
-import com.mongodb.MongoClient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -28,8 +27,15 @@ public class WebSessionMongoDbApplicationTests {
 		}
 
 		@Bean
-		public MongoClient mongo() {
-			return new MongoClient(mongoContainer().getContainerIpAddress(), mongoContainer().getFirstMappedPort());
+		public com.mongodb.MongoClient mongo() {
+			return new com.mongodb.MongoClient(mongoContainer().getContainerIpAddress(),
+					mongoContainer().getFirstMappedPort());
+		}
+
+		@Bean
+		public com.mongodb.reactivestreams.client.MongoClient reactiveStreamsMongoClient() {
+			return com.mongodb.reactivestreams.client.MongoClients.create("mongodb://"
+					+ mongoContainer().getContainerIpAddress() + ":" + mongoContainer().getFirstMappedPort());
 		}
 
 	}
