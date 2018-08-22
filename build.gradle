@@ -14,7 +14,7 @@ subprojects {
 		maven { url 'https://repo.spring.io/libs-milestone/' }
 	}
 
-	ext['spring-session-bom.version'] = 'Bean-M1'
+	ext['spring-session-bom.version'] = 'Bean-M2'
 
 	dependencyManagement {
 		imports {
