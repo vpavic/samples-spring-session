@@ -1,6 +1,6 @@
 plugins {
 	id 'base'
-	id 'org.springframework.boot' version '2.0.4.RELEASE' apply false
+	id 'org.springframework.boot' version '2.0.5.RELEASE' apply false
 }
 
 subprojects {
@@ -14,11 +14,11 @@ subprojects {
 		maven { url 'https://repo.spring.io/libs-milestone/' }
 	}
 
-	ext['spring-session-bom.version'] = 'Bean-M2'
+	ext['spring-session-bom.version'] = 'Bean-M3'
 
 	dependencyManagement {
 		imports {
-			mavenBom 'org.springframework.boot:spring-boot-dependencies:2.0.4.RELEASE'
+			mavenBom 'org.springframework.boot:spring-boot-dependencies:2.0.5.RELEASE'
 			mavenBom 'org.testcontainers:testcontainers-bom:1.8.3'
 		}
 	}
