@@ -1,5 +1,0 @@
-dependencies {
-	compile 'org.springframework:spring-webflux'
-	compile 'org.springframework.security:spring-security-config'
-	compile 'org.springframework.security:spring-security-web'
-}

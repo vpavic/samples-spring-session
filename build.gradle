@@ -6,17 +6,11 @@ plugins {
 subprojects {
 	apply plugin: 'java'
 	apply plugin: 'io.spring.dependency-management'
+	apply plugin: 'org.springframework.boot'
 
 	sourceCompatibility = 1.8
 
 	repositories {
 		mavenCentral()
-	}
-
-	dependencyManagement {
-		imports {
-			mavenBom 'org.springframework.boot:spring-boot-dependencies:2.1.0.RELEASE'
-			mavenBom 'org.testcontainers:testcontainers-bom:1.9.1'
-		}
 	}
 }
