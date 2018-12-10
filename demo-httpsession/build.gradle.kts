@@ -1,6 +1,4 @@
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-actuator")
-	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 
 	when (extra.get("profile")) {
@@ -29,6 +27,4 @@ dependencies {
 			implementation("org.springframework.session:spring-session-data-redis")
 		}
 	}
-
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }

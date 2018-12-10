@@ -18,4 +18,11 @@ subprojects {
 	repositories {
 		mavenCentral()
 	}
+
+	dependencies {
+		"implementation"("org.springframework.boot:spring-boot-starter-actuator")
+		"implementation"("org.springframework.boot:spring-boot-starter-security")
+
+		"testImplementation"("org.springframework.boot:spring-boot-starter-test")
+	}
 }
