@@ -72,7 +72,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	}
 
 	@Configuration
-	@ConditionalOnMissingBean(SessionRepository.class)
+	@ConditionalOnMissingBean(type = "org.springframework.session.SessionRepository")
 	static class NoSpringSessionAvailableConfig {
 
 		private final UserDetailsService userDetailsService;
