@@ -21,7 +21,10 @@ subprojects {
 
 	dependencies {
 		"implementation"("org.springframework.boot:spring-boot-starter-actuator")
+		"implementation"("org.springframework.boot:spring-boot-starter-mustache")
 		"implementation"("org.springframework.boot:spring-boot-starter-security")
+
+		"compileOnly"("org.springframework.session:spring-session-core")
 
 		"testImplementation"("org.springframework.boot:spring-boot-starter-test")
 	}

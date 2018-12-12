@@ -1,7 +1,6 @@
 package demo;
 
 import java.io.Serializable;
-import java.util.UUID;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -29,8 +28,8 @@ public class SessionScopedBean implements Serializable {
 		logger.info("sessionScopedBean: close");
 	}
 
-	public String random() {
-		return UUID.randomUUID().toString().replace("-", "").substring(0, 7);
+	void invoke() {
+		logger.info("sessionScopedBean: invoke");
 	}
 
 }

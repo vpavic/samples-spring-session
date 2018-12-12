@@ -1,14 +1,18 @@
 package demo;
 
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Collections;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.servlet.http.HttpSession;
 
 @SpringBootApplication
 @Controller
@@ -22,26 +26,31 @@ public class DemoHttpSessionApplication {
 	private SessionScopedBean sessionScopedBean;
 
 	@GetMapping(path = "/", produces = MediaType.TEXT_PLAIN_VALUE)
-	@ResponseBody
-	public String home(HttpSession session) {
-		return session.getId();
+	public String home(HttpSession session, Model model) {
+		model.addAttribute("sessionType", session.getClass().getName());
+		model.addAttribute("sessionId", session.getId());
+		model.addAttribute("sessionCreationTime", Instant.ofEpochMilli(session.getCreationTime()));
+		model.addAttribute("sessionLastAccessedTime", Instant.ofEpochMilli(session.getLastAccessedTime()));
+		model.addAttribute("sessionMaxInactiveInterval", Duration.ofSeconds(session.getMaxInactiveInterval()));
+		model.addAttribute("sessionAttributes", Collections.list(session.getAttributeNames()));
+		return "home";
 	}
 
-	@GetMapping(path = "/scoped-bean", produces = MediaType.TEXT_PLAIN_VALUE)
-	@ResponseBody
+	@GetMapping(path = "/scoped-bean")
 	public String scopedBean() {
-		return this.sessionScopedBean.random();
+		this.sessionScopedBean.invoke();
+		return "redirect:/";
 	}
 
 	@GetMapping(path = "/bind")
 	public String bind(HttpSession session) {
-		session.setAttribute("bind", new LoggingHttpSessionBindingListener());
+		session.setAttribute("bindingListener", new LoggingHttpSessionBindingListener());
 		return "redirect:/";
 	}
 
 	@GetMapping(path = "/unbind")
 	public String unbind(HttpSession session) {
-		session.removeAttribute("bind");
+		session.removeAttribute("bindingListener");
 		return "redirect:/";
 	}
 
