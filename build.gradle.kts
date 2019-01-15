@@ -5,7 +5,7 @@ plugins {
 }
 
 subprojects {
-	extra.set("profile", properties.getOrDefault("profile", "default"))
+	extra.set("profile", properties.getOrDefault("profile", "redis"))
 
 	apply(plugin = "java")
 	apply(plugin = "io.spring.dependency-management")
@@ -32,7 +32,7 @@ subprojects {
 		"implementation"("org.springframework.boot:spring-boot-starter-mustache")
 		"implementation"("org.springframework.boot:spring-boot-starter-security")
 
-		"compileOnly"("org.springframework.session:spring-session-core")
+		"implementation"("org.springframework.session:spring-session-core")
 
 		developmentOnly("org.springframework.boot:spring-boot-devtools")
 

@@ -22,7 +22,7 @@ dependencies {
 			implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
 			implementation("org.springframework.session:spring-session-data-mongodb")
 		}
-		"redis" -> {
+		else -> {
 			implementation("org.springframework.boot:spring-boot-starter-data-redis")
 			implementation("org.springframework.session:spring-session-data-redis")
 		}

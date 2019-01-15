@@ -6,7 +6,7 @@ dependencies {
 			implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
 			implementation("org.springframework.session:spring-session-data-mongodb")
 		}
-		"redis" -> {
+		else -> {
 			implementation("org.springframework.boot:spring-boot-starter-data-redis-reactive")
 			implementation("org.springframework.session:spring-session-data-redis")
 		}
