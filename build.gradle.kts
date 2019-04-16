@@ -1,7 +1,7 @@
 plugins {
 	base
-	id("io.spring.dependency-management") version "1.0.6.RELEASE" apply false
-	id("org.springframework.boot") version "2.1.2.RELEASE" apply false
+	id("io.spring.dependency-management") version "1.0.7.RELEASE" apply false
+	id("org.springframework.boot") version "2.1.4.RELEASE" apply false
 }
 
 subprojects {
@@ -12,7 +12,7 @@ subprojects {
 	apply(plugin = "org.springframework.boot")
 
 	configure<JavaPluginConvention> {
-		sourceCompatibility = JavaVersion.VERSION_1_8
+		sourceCompatibility = JavaVersion.VERSION_11
 	}
 
 	repositories {
