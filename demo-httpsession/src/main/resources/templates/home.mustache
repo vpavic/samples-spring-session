@@ -25,14 +25,10 @@
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
         </ul>
-        <form class="form-inline" method="post" action="/logout">
-            <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
-            <button class="btn" type="submit">Logout</button>
-        </form>
+        <a class="btn btn-light" href="/logout" role="button">Logout</a>
     </div>
 </nav>
 <main role="main" class="container">
-    <!--<h1>HttpSession Demo</h1>-->
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">Session info</h5>
