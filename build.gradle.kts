@@ -1,7 +1,7 @@
 plugins {
 	base
 	id("io.spring.dependency-management") version "1.0.7.RELEASE" apply false
-	id("org.springframework.boot") version "2.1.4.RELEASE" apply false
+	id("org.springframework.boot") version "2.1.5.RELEASE" apply false
 }
 
 subprojects {
