@@ -1,4 +1,4 @@
-rootProject.name = "spring-session-demos"
+rootProject.name = "spring-session-samples"
 
-include("demo-httpsession")
-include("demo-websession")
+include("sample-httpsession")
+include("sample-websession")
