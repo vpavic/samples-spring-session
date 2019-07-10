@@ -1,7 +1,7 @@
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 
-	when (extra.get("profile")) {
+	when (project.extra.get("profile")) {
 		"mongodb" -> {
 			implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
 			implementation("org.springframework.session:spring-session-data-mongodb")
