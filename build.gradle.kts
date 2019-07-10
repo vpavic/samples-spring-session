@@ -1,3 +1,7 @@
+buildscript {
+	extra.set("profile", properties.getOrDefault("profile", "redis"))
+}
+
 plugins {
 	base
 	id("io.spring.dependency-management") version "1.0.8.RELEASE" apply false
@@ -5,8 +9,6 @@ plugins {
 }
 
 subprojects {
-	extra.set("profile", properties.getOrDefault("profile", "redis"))
-
 	apply(plugin = "java")
 	apply(plugin = "io.spring.dependency-management")
 	apply(plugin = "org.springframework.boot")

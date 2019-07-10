@@ -1,7 +1,7 @@
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 
-	when (project.extra.get("profile")) {
+	when (rootProject.extra.get("profile")) {
 		"hazelcast" -> {
 			implementation("org.springframework.session:spring-session-hazelcast")
 		}
