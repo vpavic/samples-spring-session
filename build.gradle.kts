@@ -5,7 +5,7 @@ buildscript {
 plugins {
 	base
 	id("io.spring.dependency-management") version "1.0.8.RELEASE" apply false
-	id("org.springframework.boot") version "2.1.6.RELEASE" apply false
+	id("org.springframework.boot") version "2.2.0.M5" apply false
 }
 
 subprojects {
@@ -19,6 +19,7 @@ subprojects {
 
 	repositories {
 		mavenCentral()
+		maven(url = "https://repo.spring.io/libs-milestone")
 	}
 
 	dependencies {
