@@ -4,7 +4,7 @@ buildscript {
 
 plugins {
 	base
-	id("org.springframework.boot") version "2.2.0.M6" apply false
+	id("org.springframework.boot") version "2.2.0.RC1" apply false
 }
 
 subprojects {
