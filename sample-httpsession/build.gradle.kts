@@ -1,6 +1,8 @@
 import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
-apply<SpringBootPlugin>()
+plugins {
+	id("org.springframework.boot")
+}
 
 dependencies {
 	implementation(platform(SpringBootPlugin.BOM_COORDINATES))
