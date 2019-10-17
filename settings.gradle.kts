@@ -1,4 +1,4 @@
-val springBootVersion = "2.2.0.RC1"
+val springBootVersion = "2.2.0.RELEASE"
 
 pluginManagement {
 	resolutionStrategy {
