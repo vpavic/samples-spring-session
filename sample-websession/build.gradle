@@ -1,0 +1,23 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
+plugins {
+	id 'java'
+	id 'sample.conventions'
+	id 'org.springframework.boot'
+}
+
+dependencies {
+	implementation platform(SpringBootPlugin.BOM_COORDINATES)
+
+	implementation 'org.springframework.boot:spring-boot-starter-mustache'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+	redisImplementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
+	redisImplementation 'org.springframework.session:spring-session-data-redis'
+
+	mongoDbImplementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
+	mongoDbImplementation 'org.springframework.session:spring-session-data-mongodb'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}

@@ -1,0 +1,10 @@
+plugins {
+	id 'base'
+}
+
+allprojects {
+	repositories {
+		mavenCentral()
+		maven { url = 'https://repo.spring.io/libs-milestone/' }
+	}
+}
