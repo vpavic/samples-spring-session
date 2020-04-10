@@ -2,7 +2,7 @@ pluginManagement {
 	resolutionStrategy {
 		eachPlugin {
 			if (requested.id.id == 'org.springframework.boot') {
-				useModule "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+				useModule 'org.springframework.boot:spring-boot-gradle-plugin:2.2.6.RELEASE'
 			}
 		}
 	}
