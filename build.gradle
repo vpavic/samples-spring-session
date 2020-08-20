@@ -1,10 +1,23 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
 plugins {
 	id 'base'
+	id 'org.springframework.boot' apply false
 }
 
-allprojects {
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'sample.conventions'
+	apply plugin: 'org.springframework.boot'
+
+	sourceCompatibility = JavaVersion.VERSION_11
+
 	repositories {
 		mavenCentral()
 		maven { url = 'https://repo.spring.io/libs-milestone/' }
+	}
+
+	dependencies {
+		implementation platform(SpringBootPlugin.BOM_COORDINATES)
 	}
 }
