@@ -1,22 +1,20 @@
 package sample.httpsession;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.session.FindByIndexNameSessionRepository;
 import org.springframework.session.config.annotation.web.http.EnableSpringHttpSession;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.mockito.Mockito.mock;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
-public class SampleHttpSessionApplicationTests {
+class SampleHttpSessionApplicationTests {
 
 	@Test
-	public void contextLoads() {
+	void contextLoads() {
 	}
 
 	@TestConfiguration
@@ -24,7 +22,7 @@ public class SampleHttpSessionApplicationTests {
 	static class Config {
 
 		@Bean
-		public FindByIndexNameSessionRepository sessionRepository() {
+		public FindByIndexNameSessionRepository<?> sessionRepository() {
 			return mock(FindByIndexNameSessionRepository.class);
 		}
 

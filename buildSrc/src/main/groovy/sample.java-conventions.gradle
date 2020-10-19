@@ -1,0 +1,17 @@
+plugins {
+	id("java")
+	id("sample.configurations")
+}
+
+repositories {
+	mavenCentral()
+	maven { url = "https://repo.spring.io/libs-milestone/" }
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_11
+}
+
+test {
+	useJUnitPlatform()
+}

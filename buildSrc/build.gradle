@@ -1,14 +1,17 @@
 plugins {
-	id 'java-gradle-plugin'
+	id("groovy-gradle-plugin")
+	id("java-gradle-plugin")
 }
 
-sourceCompatibility = JavaVersion.VERSION_11
+java {
+	sourceCompatibility = JavaVersion.VERSION_11
+}
 
 gradlePlugin {
 	plugins {
-		conventionsPlugin {
-			id = 'sample.conventions'
-			implementationClass = 'sample.build.ConventionsPlugin'
+		configurationsPlugin {
+			id = "sample.configurations"
+			implementationClass = "sample.build.SampleConfigurationsPlugin"
 		}
 	}
 }

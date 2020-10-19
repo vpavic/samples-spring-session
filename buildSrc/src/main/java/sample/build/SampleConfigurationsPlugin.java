@@ -7,7 +7,7 @@ import org.gradle.api.Project;
 import org.gradle.api.artifacts.Configuration;
 import org.gradle.api.plugins.JavaPlugin;
 
-public class ConventionsPlugin implements Plugin<Project> {
+class SampleConfigurationsPlugin implements Plugin<Project> {
 
 	@Override
 	public void apply(Project project) {
