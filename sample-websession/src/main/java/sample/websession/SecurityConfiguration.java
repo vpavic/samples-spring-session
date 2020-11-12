@@ -2,23 +2,19 @@ package sample.websession;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 
-@Configuration
+@Configuration(proxyBeanMethods = false)
 public class SecurityConfiguration {
 
 	@Bean
-	public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
-		// @formatter:off
-		http
-			.authorizeExchange()
-				.anyExchange().authenticated()
-				.and()
-			.formLogin();
-		// @formatter:on
-
-		return http.build();
+	public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity httpSecurity) {
+		return httpSecurity
+				.authorizeExchange(exchanges -> exchanges.anyExchange().authenticated())
+				.formLogin(Customizer.withDefaults())
+				.build();
 	}
 
 }
