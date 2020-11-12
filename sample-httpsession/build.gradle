@@ -18,14 +18,14 @@ dependencies {
 	jdbcImplementation("org.springframework.boot:spring-boot-starter-jdbc")
 	jdbcImplementation("org.springframework.session:spring-session-jdbc")
 
-	jdbcImplementation("com.h2database:h2")
-	jdbcImplementation("com.ibm.db2:jcc")
-	jdbcImplementation("com.microsoft.sqlserver:mssql-jdbc")
-	jdbcImplementation("com.oracle.database.jdbc:ojdbc10")
-	jdbcImplementation("com.zaxxer:HikariCP")
-	jdbcImplementation("mysql:mysql-connector-java")
-	jdbcImplementation("org.mariadb.jdbc:mariadb-java-client")
-	jdbcImplementation("org.postgresql:postgresql")
+	jdbcRuntime("com.h2database:h2")
+	jdbcRuntime("com.ibm.db2:jcc")
+	jdbcRuntime("com.microsoft.sqlserver:mssql-jdbc")
+	jdbcRuntime("com.oracle.database.jdbc:ojdbc10")
+	jdbcRuntime("com.zaxxer:HikariCP")
+	jdbcRuntime("mysql:mysql-connector-java")
+	jdbcRuntime("org.mariadb.jdbc:mariadb-java-client")
+	jdbcRuntime("org.postgresql:postgresql")
 
 	hazelcastImplementation("org.springframework.session:spring-session-hazelcast")
 
