@@ -26,4 +26,5 @@ jobs:
       - name: Run Build
         uses: burrunan/gradle-cache-action@v1
         with:
+          job-id: build-jdk${{ matrix.java }}
           arguments: check --stacktrace
