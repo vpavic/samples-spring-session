@@ -23,8 +23,15 @@ jobs:
           distribution: zulu
           java-version: ${{ matrix.java }}
 
-      - name: Run Build
-        uses: burrunan/gradle-cache-action@v1
+      - name: Cache Gradle Packages
+        uses: actions/cache@v2
         with:
-          job-id: build-jdk${{ matrix.java }}
-          arguments: check --stacktrace
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-${{ matrix.java }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.java }}-gradle-
+
+      - name: Run Build
+        run: ./gradlew check --stacktrace
