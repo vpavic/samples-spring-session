@@ -15,5 +15,9 @@ pluginManagement {
 
 rootProject.name = "spring-session-samples"
 
-include("sample-httpsession")
+include("sample-httpsession-common")
+include("sample-httpsession-hazelcast")
+include("sample-httpsession-jdbc")
+include("sample-httpsession-mongodb")
+include("sample-httpsession-redis")
 include("sample-websession")

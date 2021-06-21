@@ -1,0 +1,26 @@
+plugins {
+	id("sample.java-conventions")
+	id("org.springframework.boot")
+}
+
+dependencies {
+	implementation(project(":sample-httpsession-common"))
+	implementation("org.springframework.boot:spring-boot-starter-actuator")
+	implementation("org.springframework.boot:spring-boot-starter-jdbc")
+	implementation("org.springframework.boot:spring-boot-starter-mustache")
+	implementation("org.springframework.boot:spring-boot-starter-security")
+	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.session:spring-session-jdbc")
+
+	runtimeOnly("com.h2database:h2")
+	runtimeOnly("com.ibm.db2:jcc")
+	runtimeOnly("com.microsoft.sqlserver:mssql-jdbc")
+	runtimeOnly("com.oracle.database.jdbc:ojdbc11")
+	runtimeOnly("com.zaxxer:HikariCP")
+	runtimeOnly("mysql:mysql-connector-java")
+	runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
+	runtimeOnly("org.postgresql:postgresql")
+
+	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.testcontainers:junit-jupiter")
+}
