@@ -11,7 +11,7 @@ import org.springframework.test.context.DynamicPropertySource;
 
 @SpringBootTest
 @Testcontainers
-class SampleHttpSessionMongoDbApplicationTests {
+class SampleWebSessionMongoDbApplicationTests {
 
 	@Container
 	private static final MongoDBContainer mongoDbContainer = new MongoDBContainer("mongo:4.4.6");

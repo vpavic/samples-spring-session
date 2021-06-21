@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.server.WebSession;
 
 @Controller
-public class SampleController {
+class SampleController {
 
 	private final ReactiveSessionRepository<? extends Session> sessionRepository;
 
-	public SampleController(ReactiveSessionRepository<? extends Session> sessionRepository) {
+	SampleController(ReactiveSessionRepository<? extends Session> sessionRepository) {
 		this.sessionRepository = sessionRepository;
 	}
 
 	@GetMapping(path = "/")
-	public String home(WebSession webSession, Model model) {
+	String home(WebSession webSession, Model model) {
 		model.addAttribute("sessionRepositoryType", this.sessionRepository.getClass().getName());
 		model.addAttribute("sessionId", webSession.getId());
 		model.addAttribute("sessionCreationTime", webSession.getCreationTime());
