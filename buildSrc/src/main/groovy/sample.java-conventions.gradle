@@ -3,13 +3,19 @@ plugins {
 	id("sample.configurations")
 }
 
+java {
+	sourceCompatibility = JavaVersion.VERSION_11
+}
+
 repositories {
 	mavenCentral()
 	maven { url = "https://repo.spring.io/libs-milestone/" }
 }
 
-java {
-	sourceCompatibility = JavaVersion.VERSION_11
+dependencies {
+	implementation(platform("org.springframework.boot:spring-boot-dependencies:${springBootVersion}"))
+
+	testImplementation(platform("org.testcontainers:testcontainers-bom:1.15.3"))
 }
 
 test {
