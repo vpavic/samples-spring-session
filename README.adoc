@@ -1,2 +1,108 @@
 = Spring Session Samples
 
+image:https://github.com/vpavic/spring-session-samples/workflows/CI/badge.svg["Build Status", link="https://github.com/vpavic/spring-session-samples/actions?query=workflow%3ACI"]
+
+This repository contains sample applications that showcase basic Spring Session functionalities across different web stacks and data stores.
+
+The name of each sample application contains the web stack integration it's based on, and the data store is uses to store sessions.
+Below is the list of all the provided sample applications:
+
+* HttpSession
+** Redis
+** JDBC
+** Hazelcast
+** MongoDB
+* WebSession
+** Redis
+** MongoDB
+
+== Getting Started
+
+=== Requirements
+
+Java 11 is required to run the samples.
+
+The project is built using Gradle and uses https://docs.gradle.org/current/userguide/gradle_wrapper.html[Gradle Wrapper] to take care of downloading the appropriate Gradle version.
+
+=== Running the Samples
+
+Each sample is a Spring Boot based application that can be run using:
+
+* using the `bootRun` task of the appropriate sample application
+* from your IDE by running sample application's main class
+
+By default, all samples start web server on port `8080`.
+
+==== HttpSession Redis
+
+[source,sh]
+----
+$ ./gradlew :sample-httpsession-redis:bootRun
+----
+
+By default, this sample will attempt to connect to Redis running locally at port `6379`.
+
+==== HttpSession JDBC
+
+[source,sh]
+----
+$ ./gradlew :sample-httpsession-jdbc:bootRun
+----
+
+By default, this sample will start an embedded H2 database.
+
+The project contains the JDBC driver for the following RDMBSs:
+
+* DB2
+* MariaDB
+* MySQL
+* Oracle
+* PostgreSQL
+* SQL Server
+
+==== HttpSession Hazelcast
+
+[source,sh]
+----
+$ ./gradlew :sample-httpsession-hazelcast:bootRun
+----
+
+By default, this sample will start an embedded Hazelcast instance.
+
+==== HttpSession MongoDB
+
+[source,sh]
+----
+$ ./gradlew :sample-httpsession-mongodb:bootRun
+----
+
+By default, this sample will attempt to connect to MongoDB running locally at port `27017`.
+
+==== WebSession Redis
+
+[source,sh]
+----
+$ ./gradlew :sample-websession-redis:bootRun
+----
+
+By default, this sample will attempt to connect to Redis running locally at port `6379`.
+
+==== WebSession MongoDB
+
+[source,sh]
+----
+$ ./gradlew :sample-websession-mongodb:bootRun
+----
+
+By default, this sample will attempt to connect to MongoDB running locally at port `27017`.
+
+=== Building from Source
+
+To build the project from source, you will need to have Docker installed.
+
+To project can be built the `build` task:
+
+[source,sh]
+----
+$ ./gradlew build
+----
