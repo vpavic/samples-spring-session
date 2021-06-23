@@ -1,6 +1,6 @@
 = Spring Session Samples
 
-image:https://github.com/vpavic/spring-session-samples/workflows/CI/badge.svg["Build Status", link="https://github.com/vpavic/spring-session-samples/actions?query=workflow%3ACI"]
+image:https://github.com/vpavic/spring-session-samples/actions/workflows/build.yml/badge.svg["Build", link="https://github.com/vpavic/spring-session-samples/actions/workflows/build.yml"]
 
 This repository contains sample applications that showcase basic Spring Session functionalities across different web stacks and data stores.
 
