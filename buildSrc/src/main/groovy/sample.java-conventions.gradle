@@ -5,7 +5,9 @@ plugins {
 }
 
 java {
-	sourceCompatibility = JavaVersion.VERSION_11
+	toolchain {
+		version = JavaLanguageVersion.of(11)
+	}
 }
 
 repositories {
