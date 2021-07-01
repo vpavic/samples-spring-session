@@ -12,7 +12,6 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.session:spring-session-jdbc")
 
-	runtimeOnly("com.h2database:h2")
 	runtimeOnly("com.ibm.db2:jcc")
 	runtimeOnly("com.microsoft.sqlserver:mssql-jdbc")
 	runtimeOnly("com.oracle.database.jdbc:ojdbc11")
@@ -23,4 +22,5 @@ dependencies {
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.testcontainers:junit-jupiter")
+	testImplementation("org.testcontainers:postgresql")
 }

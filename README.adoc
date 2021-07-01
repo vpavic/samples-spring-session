@@ -49,7 +49,7 @@ By default, this sample will attempt to connect to Redis running locally at port
 $ ./gradlew :sample-httpsession-jdbc:bootRun
 ----
 
-By default, this sample will start an embedded H2 database.
+By default, this sample will attempt to connect to PostgreSQL running locally at port `5432` using database `spring_session`, username `spring_session` and password `spring_session`.
 
 The project contains the JDBC driver for the following RDMBSs:
 
