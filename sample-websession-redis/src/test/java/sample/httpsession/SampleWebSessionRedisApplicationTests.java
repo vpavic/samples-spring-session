@@ -1,15 +1,14 @@
 package sample.httpsession;
 
 import org.junit.jupiter.api.Test;
-import org.testcontainers.containers.GenericContainer;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
-
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.session.data.redis.ReactiveRedisSessionRepository;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
+import org.testcontainers.containers.GenericContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -29,7 +28,7 @@ class SampleWebSessionRedisApplicationTests {
 
 	@Test
 	void contextLoads(ApplicationContext context) {
-		assertThat(context.getBeansOfType(ReactiveRedisSessionRepository.class)).isNotNull();
+		assertThat(context.getBeansOfType(ReactiveRedisSessionRepository.class)).hasSize(1);
 	}
 
 }
