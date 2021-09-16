@@ -26,8 +26,12 @@ class SampleHttpSessionMongoDbApplicationTests {
 	}
 
 	@Test
-	void contextLoads(ApplicationContext context) {
+	void sessionRepositoryIsRegistered(ApplicationContext context) {
 		assertThat(context.getBeansOfType(MongoIndexedSessionRepository.class)).hasSize(1);
+	}
+
+	@Test
+	void sessionsEndpointIsRegistered(ApplicationContext context) {
 		assertThat(context.getBeansOfType(SessionsEndpoint.class)).hasSize(1);
 	}
 

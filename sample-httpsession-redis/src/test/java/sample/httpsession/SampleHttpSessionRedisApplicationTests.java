@@ -28,8 +28,12 @@ class SampleHttpSessionRedisApplicationTests {
 	}
 
 	@Test
-	void contextLoads(ApplicationContext context) {
+	void sessionRepositoryIsRegistered(ApplicationContext context) {
 		assertThat(context.getBeansOfType(RedisIndexedSessionRepository.class)).hasSize(1);
+	}
+
+	@Test
+	void sessionsEndpointIsRegistered(ApplicationContext context) {
 		assertThat(context.getBeansOfType(SessionsEndpoint.class)).hasSize(1);
 	}
 

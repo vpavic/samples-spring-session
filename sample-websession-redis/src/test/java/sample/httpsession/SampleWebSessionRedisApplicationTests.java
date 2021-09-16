@@ -27,7 +27,7 @@ class SampleWebSessionRedisApplicationTests {
 	}
 
 	@Test
-	void contextLoads(ApplicationContext context) {
+	void sessionRepositoryIsRegistered(ApplicationContext context) {
 		assertThat(context.getBeansOfType(ReactiveRedisSessionRepository.class)).hasSize(1);
 	}
 
