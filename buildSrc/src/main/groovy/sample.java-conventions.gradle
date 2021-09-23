@@ -1,5 +1,3 @@
-import org.springframework.boot.gradle.plugin.SpringBootPlugin
-
 plugins {
 	id("java")
 }
@@ -16,9 +14,9 @@ repositories {
 }
 
 dependencies {
-	implementation(platform(SpringBootPlugin.BOM_COORDINATES))
+	implementation(platform(libs.spring.boot.dependencies))
 
-	testImplementation(platform("org.testcontainers:testcontainers-bom:1.16.0"))
+	testImplementation(platform(libs.testcontainers.bom))
 }
 
 test {

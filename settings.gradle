@@ -8,3 +8,5 @@ include("sample-httpsession-redis")
 include("sample-websession-base")
 include("sample-websession-mongodb")
 include("sample-websession-redis")
+
+enableFeaturePreview("VERSION_CATALOGS")
