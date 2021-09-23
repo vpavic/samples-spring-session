@@ -4,7 +4,7 @@ plugins {
 }
 
 dependencies {
-	implementation(project(":sample-websession-base"))
+	implementation(projects.sampleWebsessionBase)
 	implementation("org.springframework.boot:spring-boot-starter-data-redis-reactive")
 	implementation("org.springframework.boot:spring-boot-starter-mustache")
 	implementation("org.springframework.boot:spring-boot-starter-security")
