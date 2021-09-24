@@ -19,6 +19,6 @@ dependencies {
 	testImplementation(platform(libs.testcontainers.bom))
 }
 
-test {
+tasks.withType(Test) {
 	useJUnitPlatform()
 }
