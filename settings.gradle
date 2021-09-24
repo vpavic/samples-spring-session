@@ -1,5 +1,6 @@
 rootProject.name = "spring-session-samples"
 
+includeBuild("sample-build-conventions")
 include("sample-httpsession-base")
 include("sample-httpsession-hazelcast")
 include("sample-httpsession-jdbc")
