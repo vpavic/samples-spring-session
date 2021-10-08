@@ -15,8 +15,6 @@ repositories {
 
 dependencies {
 	implementation(platform(libs.spring.boot.dependencies))
-
-	testImplementation(platform(libs.testcontainers.bom))
 }
 
 tasks.withType(Test) {

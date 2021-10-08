@@ -1,0 +1,15 @@
+plugins {
+	id("java-library")
+	id("sample.java-conventions")
+}
+
+dependencies {
+	api(platform(libs.testcontainers.bom))
+	api("org.testcontainers:mongodb")
+	api("org.testcontainers:postgresql")
+
+	compileOnly("com.zaxxer:HikariCP")
+	compileOnly("org.springframework.boot:spring-boot-starter-test")
+	compileOnly("org.springframework.data:spring-data-mongodb")
+	compileOnly("org.springframework.data:spring-data-redis")
+}
