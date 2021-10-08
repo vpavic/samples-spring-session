@@ -1,6 +1,5 @@
 package sample.httpsession;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.actuate.session.SessionsEndpoint;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,7 +17,6 @@ class SampleHttpSessionHazelcastApplicationTests {
 	}
 
 	@Test
-	@Disabled // https://github.com/spring-projects/spring-session/issues/1905
 	void sessionsEndpointIsRegistered(ApplicationContext context) {
 		assertThat(context.getBeansOfType(SessionsEndpoint.class)).hasSize(1);
 	}
