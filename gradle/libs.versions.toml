@@ -1,6 +1,6 @@
 [versions]
 spring-boot = "2.5.7"
-testcontainers = "1.16.0"
+testcontainers = "1.16.2"
 
 [libraries]
 spring-boot-dependencies = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "spring-boot" }
