@@ -15,7 +15,7 @@ pluginManagement {
 	}
 }
 
-rootProject.name = "spring-session-samples"
+rootProject.name = "samples-spring-session"
 
 includeBuild("sample-build-conventions")
 include("sample-httpsession-base")
