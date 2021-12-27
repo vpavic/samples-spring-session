@@ -5,13 +5,13 @@ plugins {
 
 dependencies {
 	implementation(projects.sampleHttpsessionBase)
-	implementation("org.springframework.boot:spring-boot-starter-actuator")
-	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
-	implementation("org.springframework.boot:spring-boot-starter-mustache")
-	implementation("org.springframework.boot:spring-boot-starter-security")
-	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.session:spring-session-data-mongodb")
+	implementation(libs.spring.boot.starter.actuator)
+	implementation(libs.spring.boot.starter.data.mongodb)
+	implementation(libs.spring.boot.starter.mustache)
+	implementation(libs.spring.boot.starter.security)
+	implementation(libs.spring.boot.starter.web)
+	implementation(libs.spring.session.data.mongodb)
 
 	testImplementation(projects.sampleTestcontainers)
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation(libs.spring.boot.starter.test)
 }

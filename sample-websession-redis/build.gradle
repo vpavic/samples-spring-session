@@ -5,12 +5,12 @@ plugins {
 
 dependencies {
 	implementation(projects.sampleWebsessionBase)
-	implementation("org.springframework.boot:spring-boot-starter-data-redis-reactive")
-	implementation("org.springframework.boot:spring-boot-starter-mustache")
-	implementation("org.springframework.boot:spring-boot-starter-security")
-	implementation("org.springframework.boot:spring-boot-starter-webflux")
-	implementation("org.springframework.session:spring-session-data-redis")
+	implementation(libs.spring.boot.starter.data.redis.reactive)
+	implementation(libs.spring.boot.starter.mustache)
+	implementation(libs.spring.boot.starter.security)
+	implementation(libs.spring.boot.starter.webflux)
+	implementation(libs.spring.session.data.redis)
 
 	testImplementation(projects.sampleTestcontainers)
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation(libs.spring.boot.starter.test)
 }

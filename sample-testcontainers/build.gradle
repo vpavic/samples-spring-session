@@ -5,11 +5,11 @@ plugins {
 
 dependencies {
 	api(platform(libs.testcontainers.bom))
-	api("org.testcontainers:mongodb")
-	api("org.testcontainers:postgresql")
+	api(libs.testcontainers.mongodb)
+	api(libs.testcontainers.postgresql)
 
-	compileOnly("com.zaxxer:HikariCP")
-	compileOnly("org.springframework.boot:spring-boot-starter-test")
-	compileOnly("org.springframework.data:spring-data-mongodb")
-	compileOnly("org.springframework.data:spring-data-redis")
+	compileOnly(libs.hikaricp)
+	compileOnly(libs.spring.boot.starter.test)
+	compileOnly(libs.spring.data.mongodb)
+	compileOnly(libs.spring.data.redis)
 }

@@ -3,8 +3,49 @@ spring-boot = "2.6.0"
 testcontainers = "1.16.2"
 
 [libraries]
+# Spring Boot
 spring-boot-dependencies = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "spring-boot" }
+spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
+spring-boot-starter-data-mongodb = { module = "org.springframework.boot:spring-boot-starter-data-mongodb" }
+spring-boot-starter-data-mongodb-reactive = { module = "org.springframework.boot:spring-boot-starter-data-mongodb-reactive" }
+spring-boot-starter-data-redis = { module = "org.springframework.boot:spring-boot-starter-data-redis" }
+spring-boot-starter-data-redis-reactive = { module = "org.springframework.boot:spring-boot-starter-data-redis-reactive" }
+spring-boot-starter-jdbc = { module = "org.springframework.boot:spring-boot-starter-jdbc" }
+spring-boot-starter-mustache = { module = "org.springframework.boot:spring-boot-starter-mustache" }
+spring-boot-starter-security = { module = "org.springframework.boot:spring-boot-starter-security" }
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
+spring-boot-starter-webflux = { module = "org.springframework.boot:spring-boot-starter-webflux" }
+# Spring Data
+spring-data-mongodb = { module = "org.springframework.data:spring-data-mongodb" }
+spring-data-redis = { module = "org.springframework.data:spring-data-redis" }
+# Spring Framework
+spring-framework-context = { module = "org.springframework:spring-context" }
+spring-framework-web = { module = "org.springframework:spring-web" }
+# Spring Security
+spring-security-config = { module = "org.springframework.security:spring-security-config" }
+spring-security-web = { module = "org.springframework.security:spring-security-web" }
+# Spring Session
+spring-session-core = { module = "org.springframework.session:spring-session-core" }
+spring-session-data-mongodb = { module = "org.springframework.session:spring-session-data-mongodb" }
+spring-session-data-redis = { module = "org.springframework.session:spring-session-data-redis" }
+spring-session-hazelcast = { module = "org.springframework.session:spring-session-hazelcast" }
+spring-session-jdbc = { module = "org.springframework.session:spring-session-jdbc" }
+# Testcontainers
 testcontainers-bom = { module = "org.testcontainers:testcontainers-bom", version.ref = "testcontainers" }
+testcontainers-mongodb = { module = "org.testcontainers:mongodb" }
+testcontainers-postgresql = { module = "org.testcontainers:postgresql" }
+# Misc dependencies
+hikaricp = { module = "com.zaxxer:HikariCP" }
+javax-annotation-api = { module = "javax.annotation:javax.annotation-api" }
+javax-servlet-api = { module = "javax.servlet:javax.servlet-api" }
+jdbc-db2 = { module = "com.ibm.db2:jcc" }
+jdbc-mariadb = { module = "org.mariadb.jdbc:mariadb-java-client" }
+jdbc-mysql = { module = "mysql:mysql-connector-java" }
+jdbc-oracle = { module = "com.oracle.database.jdbc:ojdbc11" }
+jdbc-postgresql = { module = "org.postgresql:postgresql" }
+jdbc-sqlserver = { module = "com.microsoft.sqlserver:mssql-jdbc" }
+slf4j-api = { module = "org.slf4j:slf4j-api" }
 
 [plugins]
 spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
