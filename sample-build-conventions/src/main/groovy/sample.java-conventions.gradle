@@ -18,6 +18,6 @@ dependencies {
 	implementation(platform(libs.spring.boot.dependencies))
 }
 
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
 	useJUnitPlatform()
 }
