@@ -29,4 +29,3 @@ include("sample-websession-mongodb")
 include("sample-websession-redis")
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-enableFeaturePreview("VERSION_CATALOGS")
