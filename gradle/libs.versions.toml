@@ -1,5 +1,5 @@
 [versions]
-spring-boot = "2.7.0"
+spring-boot = "2.7.1"
 testcontainers = "1.17.2"
 
 [libraries]
