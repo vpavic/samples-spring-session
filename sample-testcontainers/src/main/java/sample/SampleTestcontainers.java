@@ -57,16 +57,24 @@ public class SampleTestcontainers {
 
 		@Bean
 		GenericContainer<?> redisContainer() {
-			GenericContainer<?> redisContainer = new GenericContainer<>("redis:6.2.4-alpine")
-					.withExposedPorts(6379);
+			RedisContainer redisContainer = new RedisContainer("redis:6.2.4-alpine");
 			redisContainer.start();
 			return redisContainer;
 		}
 
 		@Bean
 		LettuceConnectionFactory redisConnectionFactory(GenericContainer<?> redisContainer) {
-			return new LettuceConnectionFactory(new RedisStandaloneConfiguration(
-					redisContainer.getContainerIpAddress(), redisContainer.getFirstMappedPort()));
+			return new LettuceConnectionFactory(new RedisStandaloneConfiguration(redisContainer.getHost(),
+					redisContainer.getFirstMappedPort()));
+		}
+
+	}
+
+	private static class RedisContainer extends GenericContainer<RedisContainer> {
+
+		RedisContainer(String dockerImageName) {
+			super(dockerImageName);
+			addExposedPorts(6379);
 		}
 
 	}
