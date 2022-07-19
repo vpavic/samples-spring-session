@@ -7,6 +7,7 @@ import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.RememberMeServices;
 import org.springframework.session.FindByIndexNameSessionRepository;
+import org.springframework.session.Session;
 import org.springframework.session.security.SpringSessionBackedSessionRegistry;
 import org.springframework.session.security.web.authentication.SpringSessionRememberMeServices;
 
@@ -21,7 +22,8 @@ class SecurityConfiguration {
 	}
 
 	@Bean
-	SpringSessionBackedSessionRegistry<?> sessionRegistry(FindByIndexNameSessionRepository<?> sessionRepository) {
+	<S extends Session> SpringSessionBackedSessionRegistry<S> sessionRegistry(
+			FindByIndexNameSessionRepository<S> sessionRepository) {
 		return new SpringSessionBackedSessionRegistry<>(sessionRepository);
 	}
 
@@ -29,7 +31,7 @@ class SecurityConfiguration {
 	SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity, RememberMeServices rememberMeServices,
 			SessionRegistry sessionRegistry) throws Exception {
 		return httpSecurity
-				.authorizeRequests(requests -> requests.anyRequest().authenticated())
+				.authorizeHttpRequests(requests -> requests.anyRequest().authenticated())
 				.formLogin(withDefaults())
 				.rememberMe(configurer -> configurer.rememberMeServices(rememberMeServices))
 				.sessionManagement(configurer -> configurer.maximumSessions(1).sessionRegistry(sessionRegistry))
