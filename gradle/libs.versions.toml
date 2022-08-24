@@ -1,4 +1,5 @@
 [versions]
+infinispan = "13.0.10.Final"
 spring-boot = "2.7.3"
 testcontainers = "1.17.3"
 
@@ -31,6 +32,8 @@ spring-session-data-mongodb = { module = "org.springframework.session:spring-ses
 spring-session-data-redis = { module = "org.springframework.session:spring-session-data-redis" }
 spring-session-hazelcast = { module = "org.springframework.session:spring-session-hazelcast" }
 spring-session-jdbc = { module = "org.springframework.session:spring-session-jdbc" }
+# Infinispan
+infinispan-spring-boot-starter-embedded = { module = "org.infinispan:infinispan-spring-boot-starter-embedded", version.ref = "infinispan" }
 # Testcontainers
 testcontainers-bom = { module = "org.testcontainers:testcontainers-bom", version.ref = "testcontainers" }
 testcontainers-mongodb = { module = "org.testcontainers:mongodb" }

@@ -1,0 +1,16 @@
+plugins {
+	id("sample.java-conventions")
+	alias(libs.plugins.spring.boot)
+}
+
+dependencies {
+	implementation(projects.sampleHttpsessionBase)
+	implementation(libs.spring.boot.starter.actuator)
+	implementation(libs.spring.boot.starter.mustache)
+	implementation(libs.spring.boot.starter.security)
+	implementation(libs.spring.boot.starter.web)
+	implementation(libs.infinispan.spring.boot.starter.embedded)
+
+	testImplementation(projects.sampleTestcontainers)
+	testImplementation(libs.spring.boot.starter.test)
+}

@@ -20,6 +20,7 @@ rootProject.name = "samples-spring-session"
 includeBuild("sample-build-conventions")
 include("sample-httpsession-base")
 include("sample-httpsession-hazelcast")
+include("sample-httpsession-infinispan")
 include("sample-httpsession-jdbc")
 include("sample-httpsession-mongodb")
 include("sample-httpsession-redis")

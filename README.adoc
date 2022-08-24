@@ -12,6 +12,7 @@ Below is the list of all the provided sample applications:
 ** JDBC
 ** Hazelcast
 ** MongoDB
+** Infinispan (3rd party integration)
 * WebSession
 ** Redis
 ** MongoDB
@@ -68,6 +69,15 @@ $ ./gradlew :sample-httpsession-hazelcast:bootRun
 ----
 
 By default, this sample will start an embedded Hazelcast instance.
+
+==== HttpSession Infinispan
+
+[source,sh]
+----
+$ ./gradlew :sample-httpsession-infinispan:bootRun
+----
+
+By default, this sample will start an embedded Infinispan instance.
 
 ==== HttpSession MongoDB
 
