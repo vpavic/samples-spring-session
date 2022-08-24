@@ -3,7 +3,7 @@ package sample.httpsession;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(proxyBeanMethods = false)
 public class SampleWebSessionMongoDbApplication {
 
 	public static void main(String[] args) {
