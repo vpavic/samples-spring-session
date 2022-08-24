@@ -1,10 +1,10 @@
 plugins {
-	id("sample.java-conventions")
+	id("sample.java-convention")
 	alias(libs.plugins.spring.boot)
 }
 
 dependencies {
-	implementation(projects.sampleHttpsessionBase)
+	implementation(projects.sampleSupportHttpsession)
 	implementation(libs.spring.boot.starter.actuator)
 	implementation(libs.spring.boot.starter.jdbc)
 	implementation(libs.spring.boot.starter.mustache)
@@ -20,6 +20,6 @@ dependencies {
 	runtimeOnly(libs.jdbc.postgresql)
 	runtimeOnly(libs.jdbc.sqlserver)
 
-	testImplementation(projects.sampleTestcontainers)
+	testImplementation(projects.sampleSupportTest)
 	testImplementation(libs.spring.boot.starter.test)
 }

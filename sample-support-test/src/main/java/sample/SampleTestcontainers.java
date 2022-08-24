@@ -8,8 +8,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.testcontainers.containers.GenericContainer;
+import org.testcontainers.containers.JdbcDatabaseContainer;
 import org.testcontainers.containers.MongoDBContainer;
-import org.testcontainers.containers.PostgreSQLContainer;
+import org.testcontainers.containers.PostgreSQLContainerProvider;
 
 public class SampleTestcontainers {
 
@@ -18,7 +19,7 @@ public class SampleTestcontainers {
 
 		@Bean
 		MongoDBContainer mongoDbContainer() {
-			MongoDBContainer mongoDbContainer = new MongoDBContainer("mongo:4.4.6");
+			MongoDBContainer mongoDbContainer = new MongoDBContainer("mongo:5.0.11");
 			mongoDbContainer.start();
 			return mongoDbContainer;
 		}
@@ -35,18 +36,18 @@ public class SampleTestcontainers {
 	public static class PostgreSqlConfiguration {
 
 		@Bean
-		PostgreSQLContainer<?> postgresContainer() {
-			PostgreSQLContainer<?> postgreSqlContainer = new PostgreSQLContainer<>("postgres:13.3-alpine");
+		JdbcDatabaseContainer<?> postgresContainer() {
+			JdbcDatabaseContainer<?> postgreSqlContainer = new PostgreSQLContainerProvider().newInstance("14.5-alpine");
 			postgreSqlContainer.start();
 			return postgreSqlContainer;
 		}
 
 		@Bean
-		HikariDataSource dataSource(PostgreSQLContainer<?> postgresContainer) {
+		HikariDataSource dataSource(JdbcDatabaseContainer<?> databaseContainer) {
 			HikariDataSource dataSource = new HikariDataSource();
-			dataSource.setJdbcUrl(postgresContainer.getJdbcUrl());
-			dataSource.setUsername(postgresContainer.getUsername());
-			dataSource.setPassword(postgresContainer.getPassword());
+			dataSource.setJdbcUrl(databaseContainer.getJdbcUrl());
+			dataSource.setUsername(databaseContainer.getUsername());
+			dataSource.setPassword(databaseContainer.getPassword());
 			return dataSource;
 		}
 
@@ -57,7 +58,7 @@ public class SampleTestcontainers {
 
 		@Bean
 		GenericContainer<?> redisContainer() {
-			RedisContainer redisContainer = new RedisContainer("redis:6.2.4-alpine");
+			GenericContainer<?> redisContainer = new GenericContainer<>("redis:7.0.4-alpine").withExposedPorts(6379);
 			redisContainer.start();
 			return redisContainer;
 		}
@@ -66,15 +67,6 @@ public class SampleTestcontainers {
 		LettuceConnectionFactory redisConnectionFactory(GenericContainer<?> redisContainer) {
 			return new LettuceConnectionFactory(new RedisStandaloneConfiguration(redisContainer.getHost(),
 					redisContainer.getFirstMappedPort()));
-		}
-
-	}
-
-	private static class RedisContainer extends GenericContainer<RedisContainer> {
-
-		RedisContainer(String dockerImageName) {
-			super(dockerImageName);
-			addExposedPorts(6379);
 		}
 
 	}
