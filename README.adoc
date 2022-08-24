@@ -20,7 +20,7 @@ Below is the list of all the provided sample applications:
 
 === Requirements
 
-Java 11 is required to run the samples.
+Java 17 is required to run the samples.
 
 The project is built using Gradle and uses https://docs.gradle.org/current/userguide/gradle_wrapper.html[Gradle Wrapper] to take care of downloading the appropriate Gradle version.
 
