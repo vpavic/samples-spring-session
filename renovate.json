@@ -6,7 +6,7 @@
   "packageRules": [
     {
       "matchPackagePatterns": ["org.infinispan"],
-      "matchCurrentVersion": "!/\\.Dev/"
+      "allowedVersions": "!/\\.Dev/"
     }
   ]
 }
