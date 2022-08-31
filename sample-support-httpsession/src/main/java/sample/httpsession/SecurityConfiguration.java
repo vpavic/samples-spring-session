@@ -31,8 +31,9 @@ class SecurityConfiguration {
 	SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity, RememberMeServices rememberMeServices,
 			SessionRegistry sessionRegistry) throws Exception {
 		return httpSecurity
-				.authorizeHttpRequests(requests -> requests.anyRequest().authenticated())
+				.authorizeHttpRequests(requests -> requests.anyRequest().permitAll())
 				.formLogin(withDefaults())
+				.logout(configurer -> configurer.logoutSuccessUrl("/"))
 				.rememberMe(configurer -> configurer.rememberMeServices(rememberMeServices))
 				.sessionManagement(configurer -> configurer.maximumSessions(1).sessionRegistry(sessionRegistry))
 				.build();

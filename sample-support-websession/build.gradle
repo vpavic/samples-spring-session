@@ -4,6 +4,7 @@ plugins {
 }
 
 dependencies {
+	implementation(libs.reactor.core)
 	implementation(libs.spring.framework.context)
 	implementation(libs.spring.framework.web)
 	implementation(libs.spring.security.config)

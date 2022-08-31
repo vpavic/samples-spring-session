@@ -48,6 +48,7 @@ jdbc-mysql = { module = "mysql:mysql-connector-java" }
 jdbc-oracle = { module = "com.oracle.database.jdbc:ojdbc11" }
 jdbc-postgresql = { module = "org.postgresql:postgresql" }
 jdbc-sqlserver = { module = "com.microsoft.sqlserver:mssql-jdbc" }
+reactor-core = { module = "io.projectreactor:reactor-core" }
 slf4j-api = { module = "org.slf4j:slf4j-api" }
 
 [plugins]

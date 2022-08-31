@@ -4,10 +4,11 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.Collections;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.session.Session;
-import org.springframework.session.SessionRepository;
+import org.springframework.security.core.Authentication;
+import org.springframework.session.web.http.SessionRepositoryFilter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,24 +16,30 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 class SampleController {
 
-	private final SessionRepository<? extends Session> sessionRepository;
-
 	private final SessionScopedBean sessionScopedBean;
 
-	SampleController(SessionRepository<? extends Session> sessionRepository, SessionScopedBean sessionScopedBean) {
-		this.sessionRepository = sessionRepository;
+	SampleController(SessionScopedBean sessionScopedBean) {
 		this.sessionScopedBean = sessionScopedBean;
 	}
 
 	@GetMapping(path = "/")
-	String home(HttpSession httpSession, Model model) {
-		model.addAttribute("sessionRepositoryType", this.sessionRepository.getClass().getName());
-		model.addAttribute("sessionId", httpSession.getId());
-		model.addAttribute("sessionCreationTime", Instant.ofEpochMilli(httpSession.getCreationTime()));
-		model.addAttribute("sessionLastAccessedTime", Instant.ofEpochMilli(httpSession.getLastAccessedTime()));
-		model.addAttribute("sessionMaxInactiveInterval", Duration.ofSeconds(httpSession.getMaxInactiveInterval()));
-		model.addAttribute("sessionAttributes", Collections.list(httpSession.getAttributeNames()));
+	String home(HttpServletRequest request, Authentication authentication, Model model) {
+		model.addAttribute("isAuthenticated", (authentication != null) && authentication.isAuthenticated());
+		HttpSession session = request.getSession();
+		model.addAttribute("sessionRepositoryType",
+				request.getAttribute(SessionRepositoryFilter.SESSION_REPOSITORY_ATTR).getClass().getName());
+		model.addAttribute("sessionId", session.getId());
+		model.addAttribute("sessionCreationTime", Instant.ofEpochMilli(session.getCreationTime()));
+		model.addAttribute("sessionLastAccessedTime", Instant.ofEpochMilli(session.getLastAccessedTime()));
+		model.addAttribute("sessionMaxInactiveInterval", Duration.ofSeconds(session.getMaxInactiveInterval()));
+		model.addAttribute("sessionAttributes", Collections.list(session.getAttributeNames()));
 		return "home";
+	}
+
+	@GetMapping(path = "/invalidate")
+	String invalidate(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
 	}
 
 	@GetMapping(path = "/scoped-bean")
