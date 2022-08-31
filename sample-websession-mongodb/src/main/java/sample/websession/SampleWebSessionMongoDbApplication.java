@@ -1,4 +1,4 @@
-package sample.httpsession;
+package sample.websession;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
