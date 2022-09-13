@@ -1,5 +1,5 @@
 [versions]
-infinispan = "13.0.10.Final"
+infinispan = "13.0.11.Final"
 spring-boot = "2.7.3"
 testcontainers = "1.17.3"
 
