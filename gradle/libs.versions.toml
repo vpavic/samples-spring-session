@@ -1,7 +1,7 @@
 [versions]
 infinispan = "13.0.11.Final"
 spring-boot = "2.7.4"
-testcontainers = "1.17.3"
+testcontainers = "1.17.4"
 
 [libraries]
 # Spring Boot
