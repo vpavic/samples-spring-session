@@ -1,6 +1,6 @@
 [versions]
 infinispan = "14.0.1.Final"
-spring-boot = "2.7.4"
+spring-boot = "2.7.5"
 testcontainers = "1.17.5"
 
 [libraries]
