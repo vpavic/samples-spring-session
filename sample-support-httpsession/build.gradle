@@ -4,7 +4,7 @@ plugins {
 }
 
 dependencies {
-	implementation(libs.javax.annotation.api)
+	implementation(libs.jakarta.annotation.api)
 	implementation(libs.spring.framework.context)
 	implementation(libs.spring.framework.web)
 	implementation(libs.spring.security.config)
@@ -12,5 +12,5 @@ dependencies {
 	implementation(libs.spring.session.core)
 	implementation(libs.slf4j.api)
 
-	compileOnly(libs.javax.servlet.api)
+	compileOnly(libs.jakarta.servlet.api)
 }

@@ -4,9 +4,8 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.Collections;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.security.core.Authentication;
 import org.springframework.session.web.http.SessionRepositoryFilter;
 import org.springframework.stereotype.Controller;

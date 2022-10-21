@@ -12,7 +12,7 @@
 
 	<map name="spring:session:sessions">
 		<attributes>
-			<attribute extractor-class-name="org.springframework.session.hazelcast.Hazelcast4PrincipalNameExtractor">
+			<attribute extractor-class-name="org.springframework.session.hazelcast.PrincipalNameExtractor">
 				principalName
 			</attribute>
 		</attributes>

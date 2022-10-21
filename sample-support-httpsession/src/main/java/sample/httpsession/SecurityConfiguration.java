@@ -1,9 +1,9 @@
 package sample.httpsession;
 
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.RememberMeServices;
 import org.springframework.session.FindByIndexNameSessionRepository;
@@ -14,7 +14,7 @@ import org.springframework.session.security.web.authentication.SpringSessionReme
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration(proxyBeanMethods = false)
-class SecurityConfiguration {
+class SecurityConfiguration<S extends Session> {
 
 	@Bean
 	SpringSessionRememberMeServices rememberMeServices() {
@@ -22,21 +22,18 @@ class SecurityConfiguration {
 	}
 
 	@Bean
-	<S extends Session> SpringSessionBackedSessionRegistry<S> sessionRegistry(
-			FindByIndexNameSessionRepository<S> sessionRepository) {
-		return new SpringSessionBackedSessionRegistry<>(sessionRepository);
-	}
-
-	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity, RememberMeServices rememberMeServices,
-			SessionRegistry sessionRegistry) throws Exception {
-		return httpSecurity
-				.authorizeHttpRequests(requests -> requests.anyRequest().permitAll())
-				.formLogin(withDefaults())
-				.logout(configurer -> configurer.logoutSuccessUrl("/"))
-				.rememberMe(configurer -> configurer.rememberMeServices(rememberMeServices))
-				.sessionManagement(configurer -> configurer.maximumSessions(1).sessionRegistry(sessionRegistry))
-				.build();
+			ObjectProvider<FindByIndexNameSessionRepository<S>> sessionRepositoryProvider) throws Exception {
+		httpSecurity.authorizeHttpRequests(requests -> requests.anyRequest().permitAll());
+		httpSecurity.formLogin(withDefaults());
+		httpSecurity.logout(configurer -> configurer.logoutSuccessUrl("/"));
+		httpSecurity.rememberMe(configurer -> configurer.rememberMeServices(rememberMeServices));
+		FindByIndexNameSessionRepository<S> sessionRepository = sessionRepositoryProvider.getIfAvailable();
+		if (sessionRepository != null) {
+			httpSecurity.sessionManagement(configurer -> configurer.maximumSessions(1)
+					.sessionRegistry(new SpringSessionBackedSessionRegistry<>(sessionRepository)));
+		}
+		return httpSecurity.build();
 	}
 
 }

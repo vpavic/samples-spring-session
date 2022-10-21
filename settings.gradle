@@ -24,7 +24,7 @@ include("sample-support-test")
 include("sample-support-websession")
 
 include("sample-httpsession-hazelcast")
-include("sample-httpsession-infinispan")
+//include("sample-httpsession-infinispan")
 include("sample-httpsession-jdbc")
 include("sample-httpsession-mongodb")
 include("sample-httpsession-redis")

@@ -2,9 +2,8 @@ package sample.httpsession;
 
 import java.io.Serializable;
 
-import javax.servlet.http.HttpSessionBindingEvent;
-import javax.servlet.http.HttpSessionBindingListener;
-
+import jakarta.servlet.http.HttpSessionBindingEvent;
+import jakarta.servlet.http.HttpSessionBindingListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

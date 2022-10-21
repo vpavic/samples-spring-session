@@ -1,6 +1,5 @@
 [versions]
-infinispan = "14.0.1.Final"
-spring-boot = "2.7.5"
+spring-boot = "3.0.0-RC1"
 testcontainers = "1.17.5"
 
 [libraries]
@@ -33,15 +32,15 @@ spring-session-data-redis = { module = "org.springframework.session:spring-sessi
 spring-session-hazelcast = { module = "org.springframework.session:spring-session-hazelcast" }
 spring-session-jdbc = { module = "org.springframework.session:spring-session-jdbc" }
 # Infinispan
-infinispan-spring-boot-starter-embedded = { module = "org.infinispan:infinispan-spring-boot-starter-embedded", version.ref = "infinispan" }
+infinispan-spring-boot-starter-embedded = { module = "org.infinispan:infinispan-spring-boot-starter-embedded" }
 # Testcontainers
 testcontainers-bom = { module = "org.testcontainers:testcontainers-bom", version.ref = "testcontainers" }
 testcontainers-mongodb = { module = "org.testcontainers:mongodb" }
 testcontainers-postgresql = { module = "org.testcontainers:postgresql" }
 # Misc dependencies
 hikaricp = { module = "com.zaxxer:HikariCP" }
-javax-annotation-api = { module = "javax.annotation:javax.annotation-api" }
-javax-servlet-api = { module = "javax.servlet:javax.servlet-api" }
+jakarta-annotation-api = { module = "jakarta.annotation:jakarta.annotation-api" }
+jakarta-servlet-api = { module = "jakarta.servlet:jakarta.servlet-api" }
 jdbc-db2 = { module = "com.ibm.db2:jcc" }
 jdbc-mariadb = { module = "org.mariadb.jdbc:mariadb-java-client" }
 jdbc-mysql = { module = "mysql:mysql-connector-java" }
