@@ -5,8 +5,10 @@
   ],
   "packageRules": [
     {
-      "matchPackagePatterns": ["org.infinispan"],
-      "allowedVersions": "!/\\.Dev/"
+      "matchPackagePatterns": [
+        "org.springframework.boot"
+      ],
+      "allowedVersions": "!/-SNAPSHOT/"
     }
   ]
 }
