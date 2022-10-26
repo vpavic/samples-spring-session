@@ -32,6 +32,8 @@ spring-session-data-redis = { module = "org.springframework.session:spring-sessi
 spring-session-hazelcast = { module = "org.springframework.session:spring-session-hazelcast" }
 spring-session-jdbc = { module = "org.springframework.session:spring-session-jdbc" }
 # Infinispan
+infinispan-commons = { module = "org.infinispan:infinispan-commons-jakarta" }
+infinispan-core = { module = "org.infinispan:infinispan-core-jakarta" }
 infinispan-spring-boot-starter-embedded = { module = "org.infinispan:infinispan-spring-boot-starter-embedded" }
 # Testcontainers
 testcontainers-bom = { module = "org.testcontainers:testcontainers-bom", version.ref = "testcontainers" }
