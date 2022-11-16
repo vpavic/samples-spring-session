@@ -1,6 +1,6 @@
 [versions]
 spring-boot = "3.0.0-RC2"
-testcontainers = "1.17.5"
+testcontainers = "1.17.6"
 
 [libraries]
 # Spring Boot
