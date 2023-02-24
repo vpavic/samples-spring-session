@@ -45,7 +45,7 @@ jakarta-annotation-api = { module = "jakarta.annotation:jakarta.annotation-api" 
 jakarta-servlet-api = { module = "jakarta.servlet:jakarta.servlet-api" }
 jdbc-db2 = { module = "com.ibm.db2:jcc" }
 jdbc-mariadb = { module = "org.mariadb.jdbc:mariadb-java-client" }
-jdbc-mysql = { module = "mysql:mysql-connector-java" }
+jdbc-mysql = { module = "com.mysql:mysql-connector-j" }
 jdbc-oracle = { module = "com.oracle.database.jdbc:ojdbc11" }
 jdbc-postgresql = { module = "org.postgresql:postgresql" }
 jdbc-sqlserver = { module = "com.microsoft.sqlserver:mssql-jdbc" }
