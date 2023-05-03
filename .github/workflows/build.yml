@@ -3,7 +3,12 @@ name: Build
 on:
   push:
     branches:
-      - '**'
+      - master
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
 
 concurrency:
   group: build-${{ github.ref }}
