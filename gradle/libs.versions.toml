@@ -1,6 +1,5 @@
 [versions]
-spring-boot = "3.0.7"
-testcontainers = "1.18.1"
+spring-boot = "3.1.0"
 
 [libraries]
 # Spring Boot
@@ -36,7 +35,6 @@ infinispan-commons = { module = "org.infinispan:infinispan-commons-jakarta" }
 infinispan-core = { module = "org.infinispan:infinispan-core-jakarta" }
 infinispan-spring-boot-starter-embedded = { module = "org.infinispan:infinispan-spring-boot-starter-embedded" }
 # Testcontainers
-testcontainers-bom = { module = "org.testcontainers:testcontainers-bom", version.ref = "testcontainers" }
 testcontainers-mongodb = { module = "org.testcontainers:mongodb" }
 testcontainers-postgresql = { module = "org.testcontainers:postgresql" }
 # Misc dependencies

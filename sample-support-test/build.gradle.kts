@@ -4,7 +4,6 @@ plugins {
 }
 
 dependencies {
-	api(platform(libs.testcontainers.bom))
 	api(libs.testcontainers.mongodb)
 	api(libs.testcontainers.postgresql)
 
