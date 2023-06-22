@@ -3,7 +3,7 @@ name: Build
 on:
   push:
     branches:
-      - master
+      - ci-improvements
   pull_request:
     types:
       - opened
@@ -21,7 +21,7 @@ jobs:
 
     strategy:
       matrix:
-        java: [17, 20]
+        java: [17, 21]
 
     steps:
       - name: Checkout Project
@@ -33,11 +33,13 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v3
         with:
-          distribution: zulu
-          java-version: ${{ matrix.java }}
+          distribution: temurin
+          java-version: |
+            21-ea
+            17
 
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
 
       - name: Run Checks
-        run: ./gradlew check --stacktrace
+        run: ./gradlew check -PtoolchainVersion=${{ matrix.java }} --stacktrace
